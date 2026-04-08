@@ -3,6 +3,12 @@ import { eq } from 'drizzle-orm';
 import { index, pool } from './db/index.js';
 import { demoUsers } from './db/schema';
 
+/**
+ * Performs a sequential demonstration of CRUD operations against the `demoUsers` table.
+ *
+ * Creates a new user, reads it back, updates its name, deletes it, and then closes the database pool if present.
+ * On any error during the sequence, logs the error and terminates the process with exit code `1`.
+ */
 async function main() {
   try {
     console.log('Performing CRUD operations...');
